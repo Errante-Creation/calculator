@@ -71,10 +71,9 @@ class Calculator {
       const integerDigits = Number.parseFloat(stringNumber.split(".")[0])
       const decimalDigits = stringNumber.split(".")[1]
 
-      let integerDisplay
-      integerDisplay = isNaN(integerDigits) ? "" : integerDigits.toLocaleString("en", {
+      const integerDisplay = isNaN(integerDigits) ? "" : integerDigits.toLocaleString("fr", {
          maximumFractionDigits: 0,
-      });
+      })
 
       return decimalDigits != null ? `${integerDisplay}.${decimalDigits}` : integerDisplay;
    }
@@ -142,7 +141,7 @@ document.addEventListener("keydown", (event) => {
    } else if (event.key === "+" || event.key === "-") {
       calculator.chooseOperation(event.key)
       calculator.updateDisplay()
-   } else if (event.key === "*") {
+   } else if (event.key === "*" || event.key === "×") {
       calculator.chooseOperation("×")
       calculator.updateDisplay()
    } else if (event.key === "/") {
@@ -155,7 +154,7 @@ document.addEventListener("keydown", (event) => {
    } else if (event.key === "Backspace") {
       calculator.delete()
       calculator.updateDisplay()
-   } else if (event.key === "Escape") {
+   } else if (event.key === "Escape" || event.key === "C" || event.key === "c" || event.key === "Delete") {
       calculator.clear()
       calculator.updateDisplay()
    }
