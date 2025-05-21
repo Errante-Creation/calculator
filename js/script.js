@@ -154,7 +154,7 @@ document.addEventListener("keydown", (event) => {
    } else if (event.key === "Backspace") {
       calculator.delete()
       calculator.updateDisplay()
-   } else if (event.key === "Escape" || event.key === "C" || event.key === "c" || event.key === "Delete") {
+   } else if (["Escape", "C", "c", "Delete"].includes(event.key)) {
       calculator.clear()
       calculator.updateDisplay()
    }
